@@ -46,3 +46,65 @@ hr {
   font-weight: 600;               
   line-height: 1.1;               
 }
+.Btngroup a {
+  text-decoration: none;
+  color: inherit;
+}
+.Btngroup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+/* ปุ่ม */
+.Btngroup button {
+  position: relative; /* สำคัญมาก */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* สีปุ่ม */
+.add { background: #2ecc71; }
+.del { background: #e74c3c; }
+.edit { background: #3498db; }
+
+/* ===== TEXT HOVER ===== */
+.Btngroup button::before {
+  content: attr(data-label); /* ดึงข้อความจาก attribute */
+  position: absolute;
+  right: 60px; /* ให้อยู่ด้านซ้ายของปุ่ม */
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+
+  background: #333;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.2s ease;
+}
+
+/* ตอน hover */
+.Btngroup button:hover::before {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
