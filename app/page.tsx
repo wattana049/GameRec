@@ -2,7 +2,7 @@
 
 import { DndContext, useDraggable, useDroppable, DragEndEvent } from '@dnd-kit/core'
 import { useState, useEffect } from 'react'
-import "./page.css";
+
 
 
 //  17 TAG
